@@ -1,0 +1,309 @@
+<style>
+
+html {
+    background-color: #F0F0F0; /* temp */
+}
+
+.xx {
+    display: none !important;
+}
+
+body {
+    font-family: 'Roboto';
+    width: 300px;
+}
+
+#app {
+    margin: auto;
+    display: block;    
+}
+
+hr {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px 0 0;
+    margin: 10px 0px;
+}
+
+input {
+    width: 100px;
+}
+
+.info {
+    width: 14px;
+    opacity: 0.5;
+}
+
+
+/* -------- text elements -------------------- */
+a {
+    color: #5e5e5e;
+    text-decoration: underline;
+    font-size: 10px;
+    font-weight: 900;
+    /* text-transform: uppercase; */
+    transition: border-color 0.3s ease;
+    }
+
+    a:hover {
+    color: blue;
+    }
+    
+
+p {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.stat {
+    background-color: #F0F0F0;
+}
+
+/* ======================== */
+
+.app-section {
+    position: relative;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 12px;
+    margin-bottom: 4px;
+    }
+
+.app-section > * {
+    margin-top: 6px;
+}
+
+/* flex container with 2 rows and 6 columns, with equal padding between rows and columns */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.grid > * {
+    width: calc(33.33% - 8px);
+    margin: 6px 6px 6px 0px;
+    text-align: center;
+}
+
+
+/* -------- interactions -------------------- */
+
+/* four clickable boxes in flex horizontal layout */
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40px;
+    margin-bottom: 12px;
+}
+
+.box {
+    width: 15%;
+    padding-bottom: 15%;
+    border: 2px solid lightgray;
+    margin-right: 6px;
+    box-sizing: border-box;
+}
+
+.box:hover {
+    background-color: black;
+    border: black;
+}
+
+.box:last-child {
+    margin-right: 0;
+    }
+
+.accordion  {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+    }
+
+.row-stretch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+
+.row-stretch > * {
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}    
+
+
+
+.category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 28px;
+    padding: 10px;
+    justify-content: space-around;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    border-top: 1px solid lightgray;
+    }
+    
+.category.open {
+    background-color: #F0F0F0;
+}
+
+
+/* -------- DROPPER! -------------------- */
+
+.dropper {
+
+}
+
+
+.dropper svg {
+    
+}
+
+
+.bg {
+    width: 80px;
+    height: 34px;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.bg:hover {
+    background-color: blue;
+}
+.bg:hover svg, .bg:hover div {
+    transform: scale(1.2) translateX(-10%) rotate(-10deg);
+    background-color: #F0F0F0;
+    padding: 2px;
+    border: 1px dashed #5e5e5e ;
+}
+
+.bg svg, .bg div {
+    transition: transform 0.2s ease-in-out;
+}
+    
+.bg.dark {
+    width: 80px;
+    height: 34px;
+    background-color: #191919;
+}
+.bg.dark:hover {
+    background-color: blue;
+}
+
+.container {
+    position: relative;
+    height: 100px;
+    background-color: grey;
+}
+
+.blur-bottom {
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;  
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    
+}
+
+/* -------- MISC INTERACTIONS -------------------- */
+
+/* tooltip: et the transition delay for the title attribute */
+.delay1 {
+    transition-delay: 0ms;
+}
+.delay2 {
+    transition-delay: 250ms;
+}
+
+
+[title] {
+    transition-delay: 0s !important;
+}
+
+
+.toggle-container {
+width: 50%; /* Set the width of the container */
+}
+
+.toggle-label {
+width: 60%; /* Set the width of the label */
+height: 30px; /* Set the height of the label */
+}
+
+.toggle:checked + .toggle-label:before {
+transform: translateX(24px); /* Adjust the position of the thumb */
+}
+
+.toggle {
+position: relative;
+display: flex;;
+width: 3em;
+height: 1.5em;
+}
+
+.toggle input {
+display: none;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+border-radius: 1em;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 1em;
+width: 1em;
+left: 0.25em;
+bottom: 0.25em;
+background-color: white;
+-webkit-transition: .3s;
+transition: .2s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: blue;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(1.5em);
+-ms-transform: translateX(1.5em);
+transform: translateX(1.5em);
+}
+  
+</style>
+  

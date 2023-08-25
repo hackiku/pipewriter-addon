@@ -1,0 +1,145 @@
+
+    <div class="app-section"> <!-- main app class -->
+      
+      <div class="title">
+        <div class="row-stretch">
+          <h2>Design</h2>
+          <svg class="chevron" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 5.5L0 1L1 0L4.5 3.5L8 0L9 1L4.5 5.5Z" fill="#444746"/></svg>
+        </div>
+      </div>
+  
+      <div class="row-stretch">
+        <p>Drop elements to your cursor</p>
+        <div style="width: 60px; height: 20px; ; transform: scale(0.5)">
+          <label class="toggle">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="tab-container">
+        <div class="tab selected">Normal</div>
+        <div class="tab-set1 tab">Dark</div>
+        <div class="tab-set1 tab">Pro</div>
+      </div>
+    
+      <div class="elements">
+
+        <div class="content-container1">
+          <div class="tab-content">
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>  
+
+          </div> <!-- tab-content -->
+        </div> <!-- content-container -->
+      
+        <!-- BLACK -->
+
+        <div class="content-container">
+          <div class="tab-content">
+
+            <div class="dropper grid">
+              <!-- dropper content -->
+            </div>  
+          </div> <!-- tab-content -->
+        </div> <!-- content-container -->
+
+        <div class="content-container">
+          <div class="tab-content">
+
+            <div class="dropper grid">
+
+            </div>
+          </div> <!-- tab-content -->
+        </div> <!-- content-container -->
+
+      </div> <!-- elements -->
+
+
+      <!-- <div class="blur-bottom"></div> -->
+      <!-- <a style="position: absolute; z-index: 1; bottom: 0; left: 0; right: 0;" href="" style="width: 100%; text-align: center;">Expand more</a> -->
+
+
+    </div> <!-- app-section -->
+
+    <!-------------AI app----------------->
+
+    <div class="app-section">
+
+      <div class="title">
+        <div class="row-stretch">
+          <h2>AI prompts</h2>
+          <svg class="chevron" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 5.5L0 1L1 0L4.5 3.5L8 0L9 1L4.5 5.5Z" fill="#444746"/></svg>
+        </div>
+      </div>
+
+      <div> <!-- #prompts -->
+        <div class="row">
+          <p>Convert to AI-friendly docs</p>
+          <svg class="info delay1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;"
+          title="Stack Overflow">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+      </div>
+
+        <div class="grid">
+          <button onclick='google.script.run.doc2html()'>doc → &lt;/&gt;</button>
+          <button onclick='google.script.run.deleteHTMLtags()'>delete &lt;/&gt;</button>
+          <button onclick='google.script.run.html2doc()'()>&lt;/&gt → doc</span></button>
+        </div>
+      
+        <p>paste prompts</p>
+        <div class="tab-container">
+          <div class="tab selected">Roleplay</div>
+          <div class="tab">Format</div>
+          <div class="tab">Brief</div>
+        </div>
+      
+        <div class="content-container">
+          <div id="roleplay-content" class="tab-content" contenteditable>Act as a SaaS copywriter who's great at UX. Rewrite the supplied microcopy with flair, brand voice and memorability.</div>
+          <div id="format-content" class="tab-content" style="display: none;">Print short, snappy and engaging copywriting in the following format, including the HTML tags. Adhere to the word count limits in brackets:
+
+            - <h2>Important headline</h2> (word count: 1-12)
+            - <h3>Secondary headline</h3> (word count: 1-15)
+            - <h4>Either (a) title of a blurb or card, or (b) button text</h4>. Guess which is which from context (word count: 1-12 words)
+            - <h5>Small label, pill label or auxiliary bit of copy</h5> (word count: 1-20)
+            - <p>Subheadline, paragraph text, or blurb/card description</p> (word count: 5-45 words)
+            </div>
+          <div id="brief-content" class="tab-content" style="display: none;">Content for Brief tab goes here.</div>
+      </div>
+      
+      <div class="row">
+        <button>Paste to cursor</button>
+        <button class="secondary">Save</button>
+      </div>
+
+        
+        <p id="saved-text" class="user-input" contenteditable>Act as a SaaS copywriter who's great at UX. Rewrite the supplied microcopy with flair, brand voice and memorability.</p>
+  
+      </div>
+
+
+
+    </div> <!-- format for AI -->

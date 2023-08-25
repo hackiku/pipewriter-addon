@@ -1,0 +1,369 @@
+<!--
+1C7RGuzeyFrIDyYI9o6CWrOD-1MoK72YwNTo_iLTd16Y
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <base target="_top">
+  <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:200,400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter+Tight:200,400,500,600&display=swap" rel="stylesheet">
+
+  <!-- <link href="https://raw.githubusercontent.com/tobiasahlin/SpinKit/master/spinkit.min.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-------------intro & quick links ----------------->    
+    
+    <div class="row">
+      <button id="deleteColumnButton">Delete column</button>
+      <button>Delete row</button>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+
+        <button id="ai-read-btn" onclick="aiRead()">Feed her! 🦾</button>
+        <button id="clear-read" onclick="clearRead()" class="secondary">Clear</button>
+        <!-- <button id="create-prompt-btn" onclick="createPrompt()">createPrompt</button> -->
+
+    </div>
+    
+        <p></p>
+    <!-------------elements app----------------->
+
+    <div id="wireframe" class="app-section collapsed">
+      
+      <div class="title">
+        <div class="row-stretch">
+          <h2>Wireframe</h2>
+          <svg class="chevron" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 5.5L0 1L1 0L4.5 3.5L8 0L9 1L4.5 5.5Z" fill="#444746"/></svg>
+        </div>
+      </div>
+        
+      <div class="screen">
+        <p></p>
+        <div class="row-stretch">
+          <div class="tab-container design-tabs">
+            <div class="tab selected">Light</div>
+            <div class="tab">Dark</div>
+            <div class="tab">AI writer</div>
+          </div>
+        </div>
+        <div class="elements">
+          <div class="design-tabs-container">
+            <div class="tab-content">
+              <div class="dropper grid">
+                <a id="container-center" href="" class="bg" onclick="insertElement('container-center')">
+                  <div style="width: 62.5%; height: 50%; border: 1px dashed gray; margin: 0 2px 0 2px;"></div>
+                </a>
+                <a id="background-empty" href="" class="bg" onclick="insertElement('background-empty')">
+                  <div style="width: 100%; height: 50%; border: 1px dashed gray; margin: 0 2px 0 2px;"></div>
+                </a>
+                <a id="background-light" href="" class="bg" onclick="insertElement('background-light')">
+                  <div style="width: 100%; height: 50%; background-color: rgb(199, 199, 199); margin: 0 2px 0 2px;"></div>
+                </a>
+              </div>
+
+              <div class="dropper grid">
+                <a id="zz-left" href="" class="bg" onclick="insertElement('zz-left')">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" y="3" width="32" height="4" fill="#767676"/> <rect opacity="0.4" y="10" width="21" height="4" fill="#767676"/> <rect x="39" width="17" height="17" fill="#767676"/> </svg>
+                </a>
+                <a id="zz-right" href="" class="bg" onclick="insertElement('zz-right')">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" x="24" y="3" width="32" height="4" fill="#767676"/> <rect opacity="0.4" x="24" y="10" width="21" height="4" fill="#767676"/> <rect width="17" height="17" fill="#767676"/> </svg>
+                </a>
+                <a id="placeholder" href="" class="bg" onclick="insertElement('placeholder')">
+                  <div style="width: 62.5%; height: 50%; background: lightgray; margin: 0 2px 0 2px;"></div>
+                </a>
+              </div>
+
+              <div class="dropper grid">
+                <a id="blurbs-3" href="" class="bg" onclick="insertElement('blurbs-3')">
+                  <svg width="57" height="21" viewBox="0 0 57 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="2" y="17" width="9" height="4" fill="#767676"/> <rect opacity="0.4" x="44" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="46" y="17" width="9" height="4" fill="#767676"/> <rect opacity="0.4" x="22" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="24" y="17" width="9" height="4" fill="#767676"/> <circle cx="6.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="28.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="50.5" cy="4.5" r="4.5" fill="#767676"/> </svg>
+                </a>
+                <a id="list-2" href="" class="bg" onclick="insertElement('list-2')">
+                  <svg width="50" height="13" viewBox="0 0 50 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" x="8" y="1" width="13" height="3" fill="#767676"/> <path d="M1 2.33333L3 4L5 1" stroke="#767676"/> <path d="M30 2.33333L32 4L34 1" stroke="#767676"/> <path d="M1 10.3333L3 12L5 9" stroke="#767676"/> <path d="M30 10.3333L32 12L34 9" stroke="#767676"/> <rect opacity="0.4" x="8" y="9" width="13" height="3" fill="#767676"/> <rect opacity="0.4" x="37" y="1" width="13" height="3" fill="#767676"/> <rect opacity="0.4" x="37" y="9" width="13" height="3" fill="#767676"/> </svg> </a>
+                <a id="blurbs-vert-3" href="" class="bg" onclick="insertElement('blurbs-vert-3')">
+                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" x="8" y="1" width="13" height="3" fill="#767676"/> <circle cx="2.5" cy="2.5" r="2.5" fill="#767676"/> <circle cx="2.5" cy="10.5" r="2.5" fill="#767676"/> <rect opacity="0.4" x="8" y="9" width="13" height="3" fill="#767676"/> <circle cx="2.5" cy="18.5" r="2.5" fill="#767676"/> <rect opacity="0.4" x="8" y="17" width="13" height="3" fill="#767676"/> </svg>
+                </a>
+              </div>
+
+              <div class="dropper grid">
+                <a id="button-left" href="" class="bg" onclick="insertElement('button-left')">
+                  <div style="width: 25%; height: 20%; background: #767676; margin: 10% auto 20px 10%;"></div>
+                </a>
+                <a id="button-center" href="" class="bg" onclick="insertElement('button-center')">
+                  <div style="width: 25%; height: 20%; background: #767676; margin: 10% auto auto auto;"></div>
+                </a>
+                <a id="button-right" href="" class="bg" onclick="insertElement('button-right')">
+                  <div style="width: 25%; height: 20%; background: #767676; margin: 10% 10% auto auto;" href=""></div>
+                </a>
+              </div>
+
+              <div class="dropper grid">
+                <a id="cards-2" href="" class="bg" onclick="insertElement('cards-2')">
+                  <svg width="62" height="26" viewBox="0 0 62 26" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="0.25" y="0.25" width="27.5" height="25.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="4" y="13" width="18" height="4" fill="#767676"/> <circle cx="8.5" cy="6.5" r="4.5" fill="#767676"/> <rect x="34.25" y="0.25" width="27.5" height="25.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="38" y="19" width="13" height="4" fill="#767676"/> <circle cx="42.5" cy="6.5" r="4.5" fill="#767676"/> <rect opacity="0.4" x="38" y="13" width="18" height="4" fill="#767676"/> <rect opacity="0.4" x="4" y="19" width="13" height="4" fill="#767676"/> </svg> </a>
+                <a id="cards-3" href="" class="bg" onclick="insertElement('cards-3')">
+                  <svg width="69" height="26" viewBox="0 0 69 26" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="0.25" y="0.25" width="18.5" height="25.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="3" y="13" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="5" y="19" width="9" height="4" fill="#767676"/> <circle cx="9.5" cy="6.5" r="4.5" fill="#767676"/> <rect x="50.25" y="0.25" width="18.5" height="25.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="53" y="13" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="55" y="19" width="9" height="4" fill="#767676"/> <circle cx="59.5" cy="6.5" r="4.5" fill="#767676"/> <rect x="25.25" y="0.25" width="18.5" height="25.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="28" y="13" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="30" y="19" width="9" height="4" fill="#767676"/> <circle cx="34.5" cy="6.5" r="4.5" fill="#767676"/> </svg>
+                </a>
+                <a id="cards-2x2" href="" class="bg" onclick="insertElement('cards-2x2')">
+                  <svg width="57" height="30" viewBox="0 0 57 30" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="0.25" y="0.25" width="25.5" height="13.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="4" y="9" width="14" height="3" fill="#767676"/> <circle cx="7" cy="5" r="3" fill="#767676"/> <rect x="30.25" y="0.25" width="26.5" height="13.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="34" y="9" width="14" height="3" fill="#767676"/> <circle cx="37" cy="5" r="3" fill="#767676"/> <rect x="30.25" y="16.25" width="26.5" height="13.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="34" y="25" width="14" height="3" fill="#767676"/> <circle cx="37" cy="21" r="3" fill="#767676"/> <rect x="0.25" y="16.25" width="25.5" height="13.5" fill="white" stroke="#D3D3D3" stroke-width="0.5"/> <rect opacity="0.4" x="4" y="25" width="14" height="3" fill="#767676"/> <circle cx="7" cy="21" r="3" fill="#767676"/> </svg> </a>
+                </a>
+              </div>
+
+            </div> <!-- tab-content -->
+          </div> <!-- design-tabs-container -->
+        
+          <!-- BLACK -->
+          <div class="design-tabs-container">
+            <div class="tab-content">
+              <div class="dropper grid">
+                <a href="" class="bg dark pro" id="headline-dark" onclick="google.script.run.runCopyFunction(14, true)">
+                  <svg width="50" height="18" viewBox="0 0 50 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="49" height="17" stroke="#C8C8C8" stroke-dasharray="2 2"/>
+                    <rect x="9" y="4" width="33" height="4" fill="white"/>
+                    <rect x="14" y="10" width="22" height="4" fill="white"/>
+                  </svg>
+                </a>
+                <a href="" class="bg dark pro" id="fullwidth-black" onclick="google.script.run.runCopyFunction(14, true)">
+                  <div style="width: 100%; height: 50%; background-color: black; opacity: 0.; margin: 0 2px 0 2px;"></div>
+                </a>
+                <a href="" class="bg pro" id="fullwidth-black" onclick="google.script.run.runCopyFunction(14, true)">
+                  <div style="width: 100%; height: 50%; background-color: black; opacity: 0.; margin: 0 2px 0 2px;"></div>
+                </a>
+                <a href="" class="bg dark pro" id="lr-left-dark" onclick="google.script.run.runCopyFunction(8, true)">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect y="3" width="32" height="4" fill="white"/> <rect y="10" width="21" height="4" fill="white"/> <rect x="39" width="17" height="17" fill="#767676"/> </svg>
+                </a>
+                <a href="" class="bg dark pro" id="lr-left-dark" onclick="google.script.run.runCopyFunction(8, true)">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" width="17" height="17" fill="#767676"/>
+                    <rect x="36" y="3" width="32" height="4" fill="white"/>
+                    <rect x="36" y="10" width="21" height="4" fill="white"/>
+                  </svg>
+                </a>
+                <a href="" class="bg dark" id="blurbs-3-dark" onclick="google.script.run.runCopyFunction(15, true)">
+                  <svg width="57" height="21" viewBox="0 0 57 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect y="11" width="13" height="4" fill="white"/> <rect x="2" y="17" width="9" height="4" fill="white"/> <rect x="44" y="11" width="13" height="4" fill="white"/> <rect x="46" y="17" width="9" height="4" fill="white"/> <rect x="22" y="11" width="13" height="4" fill="white"/> <rect x="24" y="17" width="9" height="4" fill="white"/> <circle cx="6.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="50.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="28.5" cy="4.5" r="4.5" fill="#767676"/> </svg>
+                </a>
+              </div>
+            </div> <!-- tab-content -->
+          </div> <!-- content-container -->
+
+          <!-- AI DROPPER -->
+          <div class="design-tabs-container">
+            <div class="tab-content">
+
+              <div class="dropper grid">
+                <a href="" class="bg" id="headline-empty-ai" onclick="google.script.run.runCopyFunction(1)">
+                  <div style="width: 62.5%; height: 50%; border: 1px dashed gray; margin: 0 2px 0 2px;"></div>
+                </a>
+                <a href="" class="bg" id="lr-left-ai" onclick="google.script.run.runCopyFunction(2, true)">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" y="3" width="32" height="4" fill="#767676"/> <rect opacity="0.4" y="10" width="21" height="4" fill="#767676"/> <rect x="39" width="17" height="17" fill="#767676"/> </svg>
+                </a>
+                <a href="" class="bg" id="lr-right-ai" onclick="google.script.run.runCopyFunction(3, true)">
+                  <svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" x="24" y="3" width="32" height="4" fill="#767676"/> <rect opacity="0.4" x="24" y="10" width="21" height="4" fill="#767676"/> <rect width="17" height="17" fill="#767676"/> </svg>
+                </a>
+                <a href="" class="bg" id="burbs-3-ai" onclick="google.script.run.runCopyFunction(12, true)">
+                  <svg width="57" height="21" viewBox="0 0 57 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="2" y="17" width="9" height="4" fill="#767676"/> <rect opacity="0.4" x="44" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="46" y="17" width="9" height="4" fill="#767676"/> <rect opacity="0.4" x="22" y="11" width="13" height="4" fill="#767676"/> <rect opacity="0.4" x="24" y="17" width="9" height="4" fill="#767676"/> <circle cx="6.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="28.5" cy="4.5" r="4.5" fill="#767676"/> <circle cx="50.5" cy="4.5" r="4.5" fill="#767676"/> </svg>
+                </a>
+                <a href="" class="bg" id="burbs-3-ai" onclick="google.script.run.runCopyFunction(12, true)">
+                  <svg width="80" height="21" viewBox="0 0 80 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.4" y="11" width="13" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="2" y="17" width="9" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="44" y="11" width="13" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="46" y="17" width="9" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="22" y="11" width="13" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="24" y="17" width="9" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="66" y="11" width="13" height="4" fill="#767676"/>
+                    <rect opacity="0.4" x="68" y="17" width="9" height="4" fill="#767676"/>
+                    <circle cx="6.5" cy="4.5" r="4.5" fill="#767676"/>
+                    <circle cx="28.5" cy="4.5" r="4.5" fill="#767676"/>
+                    <circle cx="50.5" cy="4.5" r="4.5" fill="#767676"/>
+                    <circle cx="72.5" cy="4.5" r="4.5" fill="#767676"/>
+                  </svg>
+                </a>
+                
+                <a href="" class="bg" id="list-2" onclick="google.script.run.runCopyFunction(12, true)">
+                  <svg width="50" height="13" viewBox="0 0 50 13" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect opacity="0.4" x="8" y="1" width="13" height="3" fill="#767676"/> <path d="M1 2.33333L3 4L5 1" stroke="#767676"/> <path d="M30 2.33333L32 4L34 1" stroke="#767676"/> <path d="M1 10.3333L3 12L5 9" stroke="#767676"/> <path d="M30 10.3333L32 12L34 9" stroke="#767676"/> <rect opacity="0.4" x="8" y="9" width="13" height="3" fill="#767676"/> <rect opacity="0.4" x="37" y="1" width="13" height="3" fill="#767676"/> <rect opacity="0.4" x="37" y="9" width="13" height="3" fill="#767676"/> </svg>
+                </a>
+              </div>
+
+              <p style="text-align: center">AI writing is coming soon.</p>
+              <p style="text-align: center">You'll be able to add elements</p>
+              <p style="text-align: center">written by ChatGPT.</p>
+            </div> <!-- tab-content -->
+          </div> <!-- content-container -->
+        </div> <!-- elements -->
+      </div>
+
+      
+      <!-- <div class="blur-bottom"></div> -->
+      <!-- <a style="position: absolute; z-index: 1; bottom: 0; left: 0; right: 0;" href="" style="width: 100%; text-align: center;">Expand more</a> -->
+
+    <p></p>
+
+    <p id="objectLogger"></p>
+
+
+    </div> <!-- #wireframe -->
+
+    <!-------------AI app----------------->
+
+
+    
+    <div class="app-section" id="chatgpt">
+
+      <div class="title">
+        <div class="row-stretch">
+          <h2>ChatGPT</h2>
+          <svg class="chevron" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 5.5L0 1L1 0L4.5 3.5L8 0L9 1L4.5 5.5Z" fill="#444746"/></svg>
+        </div>
+      </div>
+      
+      <div class="screen">
+
+        <p></p>
+
+        <!-- <div id="prompt-log" style="font-size: 10px;"></div> -->
+
+        <div class="tab-container prompt-tabs">
+          <div class="tab" style="width: 50%;">Rewrite</div>
+          <div class="tab selected" style="width: 50%;">Insert</div>
+        </div>
+        
+        <div class="prompts">
+          <div class="prompt-tabs-container">
+            <div class="tab-content">
+              <div id="rewrite-prompt" class="tab-content user-input" contenteditable>Rewrite slivers of website copy. Don't add new headlines, descriptions etc. — just rewrite the existing ones.</div>
+                  
+            
+              
+              <p id="log-prompt" style="font-size: 10px; color: #8e8e8e; display: none;">
+                // prompt-output
+              </p>
+      
+              <h3>Rewrite snippet</h5>
+              <div id="saved-text" class="user-input" contenteditable>h2: Write google docs wireframes
+                <br> p: Pipewriter is the bestest writing app in the Laniakea supercluster.
+                <br> button: sign up today
+                <br>(60 words max)</div>
+      
+      
+              <p> </p>
+              <p> </p>
+              <p> </p>
+      
+
+            
+            
+            </div>
+      
+            <div class="tab-content">
+              <div id="insert-prompt" class="tab-content user-input" contenteditable>You will write new sections of a website copy deck to continue the story of the already written ones you see below. Always print copy in the given format. Note: "undefined" means "p: ", it refers to paragraph text in the website mockup.</div>
+                <div id="format-options">
+                <div id="readText" style="font-size: 11px;" >Hey</div>
+                  <hr>
+                <div id="readUx" style="font-size: 11px;" >h2: Hey</div>
+                  <hr>
+                <div id="readHtml" style="font-size: 11px;" >&lt;h2&gt;Hey&lt;/h2&gt;</div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+                  
+        <p></p>
+
+        <button id="ai-write-btn" onclick="aiWrite()">Rewrite with AI</button>
+
+        <p id="completion">Pipewriting...</p>
+        <div class="row">
+          <!-- <button id="ai-rewrite" onclick="()">rewrite styled</button> -->
+          <button id="copy-completion" onclick="" class="secondary">Copy</button>
+        </div>
+
+        <h3>Prompt</h3>
+        <div id="roleplay-prompt" class="user-input" contenteditable>Act as a SaaS website copywriter who's great at UX. Adhere to word counts at all times.</div>
+        <a href="">copy</a>
+
+        
+
+      </div> <!-- screen -->
+
+    </div>
+
+    <div class="app-section collapsed" id="format">
+
+      <div class="title">
+        <div class="row-stretch">
+          <h2>Format</h2>
+          <svg class="chevron" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 5.5L0 1L1 0L4.5 3.5L8 0L9 1L4.5 5.5Z" fill="#444746"/></svg>
+        </div>
+      </div>
+    
+      <div class="screen">
+
+        <p>Wireframe to AI-friendly text</p>
+
+        <div class="row">
+          <div class="row">
+            <button onclick='google.script.run.doc2html()'>HTML</button>
+            <button onclick=''>Headlines</button>
+          </div>
+          <div class="row" style="margin-right: 12px; margin-left: auto;">
+            <p>&lt;h2&gt;Hey&lt;/h2&gt;</p>
+          </div>
+        </div>
+            
+        <p>Text to wireframe</p>
+
+        <div class="row">
+          <div class="row">
+            <button onclick='google.script.run.deleteHTMLtags()'>delete &lt;/&gt;</button>
+            <button onclick='google.script.run.html2doc()'()>HTML to doc</span></button>
+          </div>
+          <div class="row" style="margin-right: 70px; margin-left: auto;">
+            <p>Hey</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <input type="checkbox" id="copyCheckbox" style="color: blue;">
+          <label for="copyCheckbox">Also copy to clipboard</label>
+        </div>
+                  
+      </div>
+
+
+    </div> <!-- #format -->
+  
+  </div> <!-- .app! -->
+
+  <div class="cta">
+    <div class="row-stretch">
+      <div class="icon-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM17.01 9H7V7H17.01V9ZM17.01 13H7V11H17.01V13ZM14.01 17H7V15H14.01V17Z" fill="#4285F4"/>
+          </svg>          
+        <a href="https://docs.google.com/document/d/14mbQRBmi26IkPE4CFebu73MDHou5CrpzjJEc3SexPyw/edit" target="_blank" title="Tooltip">Template doc →</a>
+      </div>
+      <button class="secondary" style="margin-right: 40px !important;">Upgrade ✨</button>
+    </div>
+  </div>
+
+  <!-- ====================== END ====================== -->
+<!-- <script src="./js.js" defer></script> -->
+<?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
+</body>
+
+</html>
