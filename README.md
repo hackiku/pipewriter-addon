@@ -27,3 +27,10 @@ https://docs.google.com/document/d/14mbQRBmi26IkPE4CFebu73MDHou5CrpzjJEc3SexPyw/
 ## sample wireframe i make for clients (for context)
 https://docs.google.com/document/d/15-DIYt8rhTM_Oj_VBwPbvz-K9SdVKbnYWnD9L944Gg8/edit
 
+I just need the UI, ill add the docs functionalities and start tweaking them properly (working in current UI makes me very unmotivated...)
+
+- 2 screens (2-tab nav on top)
+- light & dark elements accordions. A flex grid will make it easy peasy
+- the AI drag-up element thingy
+- the sticky bottom bar with buy, template, and profile pic links
+
